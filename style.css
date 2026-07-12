@@ -141,3 +141,22 @@ nav a {
     color:#003366;
     margin-bottom:10px;
 }
+.notice{
+    background:#fff;
+    margin:30px;
+    padding:30px;
+    border-radius:10px;
+}
+
+.notice h2{
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.notice ul{
+    padding-left:20px;
+}
+
+.notice li{
+    margin:10px 0;
+}
