@@ -200,3 +200,47 @@ nav a {
 .contact p{
     margin:10px 0;
 }
+
+.hero{
+    height:100vh;
+    background:url("assets/college.jpg") center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.overlay{
+    background:rgba(0,0,0,.55);
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+}
+
+.overlay h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.overlay p{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#ff9800;
+    color:#fff;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#e68900;
+}
