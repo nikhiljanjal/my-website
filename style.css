@@ -82,3 +82,43 @@ nav a {
     margin:10px;
   }
 }
+.principal {
+  background: white;
+  margin: 30px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.principal h2 {
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.vision {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+.vision div {
+  background: white;
+  padding: 25px;
+  flex: 1;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.vision h2 {
+  color: #004080;
+}
+
+.vision p {
+  line-height: 1.6;
+}
+
+@media(max-width:700px){
+  .vision {
+    flex-direction: column;
+  }
+}
