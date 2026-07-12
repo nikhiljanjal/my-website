@@ -1,32 +1,84 @@
-<header>
-  <h1>Shri Manohar Rao Naik Junior College</h1>
-  <p>Kondala (Mahali), Washim, Maharashtra</p>
-</header>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Admissions</a>
-  <a href="#">Courses</a>
-  <a href="#">Faculty</a>
-  <a href="#">Contact</a>
-</nav>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
 
-<section class="hero">
-  <h2>Welcome to Shri Manohar Rao Naik Junior College</h2>
-  <p>Empowering Students Through Quality Education</p>
-  <button>Admission Open</button>
-</section>
+.topbar {
+  background: #003366;
+  color: white;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+}
 
-<section class="about">
-  <h2>About Our College</h2>
-  <p>
-    Shri Manohar Rao Naik Junior College, Kondala (Mahali), Washim is committed
-    to providing quality education, discipline, and holistic development of students.
-    Our mission is to prepare students for higher education and a successful future.
-  </p>
-</section>
+header {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+}
 
-<footer>
-  © 2026 Shri Manohar Rao Naik Junior College, Kondala (Mahali), Washim
-</footer>
+.logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.title {
+  margin-left: 20px;
+}
+
+.title h1 {
+  color: #003366;
+}
+
+nav {
+  background: #004080;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #e8f1ff;
+}
+
+.hero h2 {
+  font-size: 35px;
+  color: #003366;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #003366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+@media(max-width:700px){
+  header{
+    flex-direction: column;
+    text-align:center;
+  }
+
+  nav a{
+    display:block;
+    margin:10px;
+  }
+}
