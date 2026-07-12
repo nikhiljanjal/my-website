@@ -186,3 +186,17 @@ nav a {
 .gallery-grid img:hover{
     transform:scale(1.05);
 }
+.contact{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.contact h2{
+    margin-bottom:20px;
+}
+
+.contact p{
+    margin:10px 0;
+}
