@@ -31,7 +31,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 </div>
 
 </div>
-
+ 
 <!-- Header -->
 <header>
 
@@ -40,6 +40,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 </div>
 
 <div class="title">
+    
 <h1>श्री मनोहरराव नाईक कनिष्ठ महाविद्यालय</h1>
 
 <p>
@@ -76,42 +77,51 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         <h1>श्री मनोहरराव नाईक कनिष्ठ महाविद्यालय</h1>
         <p>गुणवत्तापूर्ण शिक्षण • उज्ज्वल भविष्य</p>
 
-        <a href="#" class="btn">प्रवेश सुरू आहेत</a>
+    <button class="btn" onclick="openPopup()">
+    🎓 प्रवेश सुरू आहेत
+</button>
     </div>
 </section>
 
-    <section id="admission" class="admission">
+    <div id="popup" class="popup">
 
-<h2>🎓 Admission Enquiry Form</h2>
+    <div class="popup-content">
 
-<form>
+        <span class="close" onclick="closePopup()">&times;</span>
 
-<input type="text" placeholder="Full Name" required>
+        <h2>🎓 Admission Enquiry</h2>
 
-<input type="tel" placeholder="Mobile Number" required>
+        <form>
 
-<select required>
-<option value="">Inquiry for Which Class?</option>
-<option>11th</option>
-<option>12th</option>
-<option>UG (Under Graduation)</option>
-<option>PG (Post Graduation)</option>
-</select>
+            <input type="text" placeholder="Full Name" required>
 
-    
-<select required>
-<option value="">Stream</option>
-<option>Arts</option>
-<option>Commerce</option>
-<option>Science</option>
-<option>Open university</option>
-</select>
+            <input type="tel" placeholder="Mobile Number" required>
 
-<button type="submit">Submit Enquiry</button>
+            <input type="text" placeholder="District" required>
 
-</form>
+            <select required>
+                <option value="">Select Class</option>
+                <option>11th</option>
+                <option>12th</option>
+                <option>UG</option>
+                <option>PG</option>
+            </select>
 
-</section>
+            <select required>
+                <option value="">Select Stream</option>
+                <option>Arts</option>
+                <option>Commerce</option>
+                <option>Science</option>
+                <option>Open University</option>
+            </select>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+</div>
 <!-- Principal Message -->
 
 <section class="principal">
