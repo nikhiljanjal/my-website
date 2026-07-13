@@ -354,3 +354,60 @@ nav a {
         transform:translateY(0);
     }
 }
+/* Admission Section */
+
+.admission{
+    padding:60px 10%;
+    background:#f5f9ff;
+    text-align:center;
+}
+
+.admission h2{
+    color:#003366;
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+.admission form{
+    max-width:500px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.admission input,
+.admission select{
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+.admission input:focus,
+.admission select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 8px rgba(13,110,253,.3);
+}
+
+.admission button{
+    width:100%;
+    padding:15px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.admission button:hover{
+    background:#003366;
+    transform:translateY(-3px);
+}
