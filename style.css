@@ -411,3 +411,71 @@ nav a {
     background:#003366;
     transform:translateY(-3px);
 }
+
+/* Popup Background */
+.popup{
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    z-index:9999;
+}
+
+/* Popup Box */
+.popup-content{
+    background:#fff;
+    width:90%;
+    max-width:450px;
+    margin:60px auto;
+    padding:30px;
+    border-radius:15px;
+    position:relative;
+    animation:popup .4s ease;
+}
+
+@keyframes popup{
+    from{
+        transform:translateY(-40px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.popup-content input,
+.popup-content select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.popup-content button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#0056b3;
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:17px;
+}
+
+.popup-content button:hover{
+    background:#003366;
+}
+
+.close{
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:30px;
+    cursor:pointer;
+}
