@@ -312,7 +312,7 @@ nav a {
     height: 100%;
     background: rgba(255,255,255,.35);
     transform: skewX(-25deg);
-    animation: shine 3s infinite;
+    animation: shine 3s;
 }
 
 @keyframes underline{
