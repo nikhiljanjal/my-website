@@ -78,7 +78,7 @@ nav ul.menu li{
     color:#fff;
     text-decoration:none;
     padding:9px 5px;
-    font-size:10px;
+    font-size:12px;
     white-space:nowrap;
 }
 
@@ -669,4 +669,22 @@ nav{
     width:100%;
 }
 
+}
+/* FINAL NAV FIX */
+
+nav ul.menu{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    justify-content:center;
+    align-items:center;
+}
+
+nav ul.menu li{
+    width:auto;
+}
+
+nav ul.menu li a{
+    font-size:12px;
+    padding:8px 5px;
 }
