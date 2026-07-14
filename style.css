@@ -51,12 +51,13 @@ nav{
 
 .menu{
     display:flex;
-    justify-content:center;
+    justify-content:space-evenly;
     align-items:center;
     list-style:none;
-    flex-wrap:wrap;
+    margin:0;
+    padding:0;
+    flex-wrap:nowrap;   /* एका ओळीत */
 }
-
 .menu li{
     position:relative;
 }
@@ -65,8 +66,8 @@ nav{
     display:block;
     color:#fff;
     text-decoration:none;
-    padding:15px 18px;
-    font-size:16px;
+    padding:15px 12px;
+    font-size:15px;
     transition:.3s;
 }
 
@@ -625,4 +626,42 @@ nav{
 
 .dropdown-content::-webkit-scrollbar-track{
     background:#e5e5e5;
+}
+/* Mobile Menu */
+
+.menu-toggle{
+    display:none;
+    background:#003366;
+    color:white;
+    border:none;
+    font-size:28px;
+    padding:10px 15px;
+    cursor:pointer;
+}
+
+@media(max-width:992px){
+
+.menu-toggle{
+    display:block;
+}
+
+.menu{
+    display:none;
+    flex-direction:column;
+    width:100%;
+}
+
+.menu.active{
+    display:flex;
+}
+
+.menu li{
+    width:100%;
+}
+
+.dropdown-menu{
+    position:static;
+    width:100%;
+}
+
 }
