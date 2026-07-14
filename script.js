@@ -151,3 +151,15 @@ document.addEventListener("click", function(e){
     }
 
 });
+@media(max-width:768px){
+
+.menu{
+    display:none;
+    flex-direction:column;
+}
+
+.menu.active{
+    display:flex;
+}
+
+}
