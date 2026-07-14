@@ -51,13 +51,14 @@ nav{
 
 .menu{
     display:flex;
-    justify-content:space-evenly;
+    justify-content:flex-start;
     align-items:center;
     list-style:none;
     margin:0;
-    padding:0;
-    flex-wrap:nowrap;   /* एका ओळीत */
-}
+    padding:0 5px;
+    flex-wrap:nowrap;
+    }
+
 .menu li{
     position:relative;
 }
@@ -66,10 +67,9 @@ nav{
     display:block;
     color:#fff;
     text-decoration:none;
-    padding:10px 8px;
-    font-size:13px;
+    padding:9px 5px;
+    font-size:10px;
     white-space:nowrap;
-    transition:0.2s;
 }
 
 .menu li:hover>a{
