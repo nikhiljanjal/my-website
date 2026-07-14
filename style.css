@@ -57,7 +57,8 @@ nav ul.menu{
 }
 
 nav ul.menu li{
-    display:inline-flex;
+    display:block;
+    position:relative;
 }
 .menu{
     display:flex;
@@ -89,7 +90,7 @@ nav ul.menu li{
 
 /* ===== Dropdown ===== */
 
-.dropdown-menu{
+.submenu{
     display:none;
     position:absolute;
     top:100%;
@@ -105,28 +106,28 @@ nav ul.menu li{
     box-shadow:0 5px 15px rgba(0,0,0,.25);
 }
 
-.dropdown:hover .dropdown-menu{
+.dropdown:hover .submenu{
     display:block;
 }
 
-.dropdown-menu li a{
+.submenu li a{
     padding:12px 18px;
     border-bottom:1px solid rgba(255,255,255,.12);
     white-space:nowrap;
 }
 
-.dropdown-menu li a:hover{
+.submenu li a:hover{
     background:#ff9800;
     color:#000;
 }
 
 /* Scrollbar */
 
-.dropdown-menu::-webkit-scrollbar{
+.submenu::-webkit-scrollbar{
     width:8px;
 }
 
-.dropdown-menu::-webkit-scrollbar-thumb{
+.submenu::-webkit-scrollbar-thumb{
     background:#ff9800;
     border-radius:10px;
 }
@@ -143,7 +144,7 @@ nav ul.menu li{
     width:100%;
 }
 
-.dropdown-menu{
+.submenu{
     position:static;
     width:100%;
     max-height:none;
@@ -604,7 +605,7 @@ nav ul.menu li{
     width:100%;
 }
 
-.dropdown-menu{
+.submenu{
     position:static;
     width:100%;
 }
