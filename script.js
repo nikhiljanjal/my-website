@@ -12,3 +12,6 @@ window.onclick = function(event){
         popup.style.display = "none";
     }
 }
+function toggleMenu(){
+    document.querySelector(".menu").classList.toggle("active");
+}
