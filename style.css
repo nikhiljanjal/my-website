@@ -56,6 +56,17 @@ body{
     color:#FFD700;
 
 }
+.top-contact{
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.top-contact a{
+    color:white;
+    text-decoration:none;
+}
 
 /*======================================
         HEADER
