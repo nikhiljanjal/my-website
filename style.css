@@ -1638,3 +1638,14 @@ line-height:1.8;
 }
 
 }
+/* JS dropdown open */
+
+.submenu.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
