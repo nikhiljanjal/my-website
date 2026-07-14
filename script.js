@@ -111,3 +111,43 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 });
+
+// ===============================
+// MOBILE DROPDOWN
+// ===============================
+
+document.querySelectorAll(".dropdown > a").forEach(function(drop){
+
+    drop.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        let submenu = this.nextElementSibling;
+
+        // बाकी dropdown बंद करा
+        document.querySelectorAll(".submenu").forEach(function(menu){
+            if(menu !== submenu){
+                menu.classList.remove("show");
+            }
+        });
+
+        // current dropdown open/close
+        submenu.classList.toggle("show");
+
+    });
+
+});
+
+
+// बाहेर click केल्यावर dropdown बंद
+document.addEventListener("click", function(e){
+
+    if(!e.target.closest(".dropdown")){
+
+        document.querySelectorAll(".submenu").forEach(function(menu){
+            menu.classList.remove("show");
+        });
+
+    }
+
+});
