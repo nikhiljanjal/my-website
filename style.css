@@ -66,11 +66,12 @@ nav{
     display:block;
     color:#fff;
     text-decoration:none;
-    padding:15px 12px;
-    font-size:15px;
+    padding:12px 8px;
+    font-size:13px;
+    font-weight:600;
+    white-space:nowrap;
     transition:.3s;
 }
-
 .menu li:hover>a{
     background:#ff9800;
     color:#000;
