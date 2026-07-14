@@ -48,7 +48,17 @@ nav{
     z-index:999;
     box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
+nav ul.menu{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:flex-start;
+}
 
+nav ul.menu li{
+    display:inline-flex;
+}
 .menu{
     display:flex;
     justify-content:flex-start;
@@ -644,12 +654,6 @@ nav{
 
 .menu-toggle{
     display:block;
-}
-
-.menu{
-    display:none;
-    flex-direction:column;
-    width:100%;
 }
 
 .menu.active{
