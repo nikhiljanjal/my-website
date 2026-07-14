@@ -581,13 +581,6 @@ nav ul.menu li{
 
 /* ===== Dropdown ===== */
 
-nav{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-}
-
 .dropdown{
     position:relative;
     display:inline-block;
