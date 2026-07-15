@@ -117,26 +117,32 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     });
 
 });
-function sendWhatsApp(){
+function sendEnquiry(){
 
-    let name = document.getElementById("fullname").value;
-    let mobile = document.getElementById("mobile").value;
-    let district = document.getElementById("district").value;
-    let studentClass = document.getElementById("class").value;
-    let stream = document.getElementById("stream").value;
+    let formData = new FormData();
 
-    let message =
-`*New Admission Enquiry*
+    formData.append("name", document.getElementById("fullname").value);
+    formData.append("mobile", document.getElementById("mobile").value);
+    formData.append("district", document.getElementById("district").value);
+    formData.append("class", document.getElementById("class").value);
+    formData.append("stream", document.getElementById("stream").value);
 
-Name: ${name}
-Mobile: ${mobile}
-District: ${district}
-Class: ${studentClass}
-Stream: ${stream}`;
 
-    let whatsappNumber = "919552865011";
+    fetch("https://script.google.com/macros/s/AKfycbzOLzOWZiafvdIPSgD6dQM3pFLUbU7fYwySSMpgFYUtzJrUuc8dtTLk9Egu9U1zscxqzw/exec", {
+        method: "POST",
+        body: formData
+    })
+    .then(() => {
 
-    let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+        alert("Enquiry Submitted Successfully!");
 
-    window.open(url, "_blank");
+        document.getElementById("enquiryForm").reset();
+
+    })
+    .catch(() => {
+
+        alert("Something went wrong!");
+
+    });
+
 }
