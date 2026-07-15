@@ -989,3 +989,37 @@ Stream: ${stream}`;
 
     window.open(url, "_blank");
 }
+/* College Title Golden Line Animation */
+
+.title h1{
+    position:relative;
+    display:inline-block;
+    padding-bottom:12px;
+}
+
+.title h1::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:80px;
+    height:4px;
+    background:linear-gradient(90deg,#FFD700,#ff9800);
+    border-radius:10px;
+    animation:titleLine 2s infinite alternate;
+}
+
+@keyframes titleLine{
+
+    0%{
+        width:60px;
+        box-shadow:0 0 5px #FFD700;
+    }
+
+    100%{
+        width:130px;
+        box-shadow:0 0 18px #ff9800;
+    }
+
+}
