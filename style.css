@@ -105,6 +105,11 @@ header{
     object-fit:contain;
 
 }
+.logo2 img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
 
 /*======================================
         TITLE
@@ -492,10 +497,14 @@ header{
 
 .logo img{
 
-    width:70px;
+    width:60px;
 
-    height:70px;
+    height:60px;
 
+}
+        .logo2 img{
+    width:60px;
+    height:60px;
 }
 
 .title h1{
