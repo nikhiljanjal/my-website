@@ -926,4 +926,41 @@ footer{
 }
 
 }
-s
+/* ===== SECTION HEADING ===== */
+
+.notice h2,
+.gallery h2,
+.contact h2,
+.about-box h2{
+    position:relative;
+    display:inline-block;
+    color:#003366;
+    margin-bottom:40px;
+}
+
+.notice h2::after,
+.gallery h2::after,
+.contact h2::after,
+.about-box h2::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-12px;
+    transform:translateX(-50%);
+    width:80px;
+    height:4px;
+    background:linear-gradient(90deg,#FFD700,#ff9800);
+    border-radius:10px;
+    animation:lineGlow 2s infinite alternate;
+}
+
+@keyframes lineGlow{
+    0%{
+        width:80px;
+        box-shadow:0 0 5px #FFD700;
+    }
+    100%{
+        width:120px;
+        box-shadow:0 0 18px #ff9800;
+    }
+}
