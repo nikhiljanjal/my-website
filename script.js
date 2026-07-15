@@ -117,3 +117,26 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     });
 
 });
+function sendWhatsApp(){
+
+    let name = document.getElementById("fullname").value;
+    let mobile = document.getElementById("mobile").value;
+    let district = document.getElementById("district").value;
+    let studentClass = document.getElementById("class").value;
+    let stream = document.getElementById("stream").value;
+
+    let message =
+`*New Admission Enquiry*
+
+Name: ${name}
+Mobile: ${mobile}
+District: ${district}
+Class: ${studentClass}
+Stream: ${stream}`;
+
+    let whatsappNumber = "919552865011";
+
+    let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
