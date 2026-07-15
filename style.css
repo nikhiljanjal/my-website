@@ -88,30 +88,33 @@ header{
 
 }
 
-.logo{
-
+header{
     display:flex;
-
     align-items:center;
-
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo img{
-
     width:90px;
-
     height:90px;
-
     object-fit:contain;
-
 }
+
+.logo2{
+    flex-shrink:0;
+}
+
 .logo2 img{
-    width:90px;
-    height:90px;
+    width:85px;
+    height:85px;
     object-fit:contain;
+    display:block;
 }
 
-/*======================================
+.title{
+    flex:1;
+}/*======================================
         TITLE
 ======================================*/
 
