@@ -119,6 +119,8 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 });
 function sendEnquiry(){
 
+    alert("Button Working");
+
     let formData = new FormData();
 
     formData.append("name", document.getElementById("fullname").value);
