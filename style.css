@@ -92,7 +92,8 @@ header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+    padding:18px 30px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .logo img{
@@ -189,17 +190,12 @@ header{
 ======================================*/
 
 .navbar-custom{
-
     position:sticky;
-
     top:0;
-
     z-index:9999;
-
     background:#003366;
-
     box-shadow:0 4px 12px rgba(0,0,0,.18);
-
+    overflow:visible;
 }
 /*======================================
         NAVIGATION MENU
