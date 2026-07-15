@@ -989,12 +989,12 @@ Stream: ${stream}`;
 
     window.open(url, "_blank");
 }
-/* College Title Golden Line Animation */
+/* Small Smooth Golden Line */
 
 .title h1{
     position:relative;
     display:inline-block;
-    padding-bottom:12px;
+    padding-bottom:10px;
 }
 
 .title h1::after{
@@ -1003,23 +1003,23 @@ Stream: ${stream}`;
     left:50%;
     bottom:0;
     transform:translateX(-50%);
-    width:80px;
-    height:4px;
-    background:linear-gradient(90deg,#FFD700,#ff9800);
+    width:70px;
+    height:3px;
+    background:#FFD700;
     border-radius:10px;
-    animation:titleLine 2s infinite alternate;
+    animation:smoothLine 3s ease-in-out infinite alternate;
 }
 
-@keyframes titleLine{
+@keyframes smoothLine{
 
-    0%{
+    from{
         width:60px;
-        box-shadow:0 0 5px #FFD700;
+        opacity:0.7;
     }
 
-    100%{
-        width:130px;
-        box-shadow:0 0 18px #ff9800;
+    to{
+        width:90px;
+        opacity:1;
     }
 
 }
