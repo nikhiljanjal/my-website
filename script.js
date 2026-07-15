@@ -117,27 +117,31 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 // MOBILE DROPDOWN
 // ===============================
 
-document.querySelectorAll(".dropdown > a").forEach(function(drop){
+document.querySelectorAll(".dropdown > a").forEach(function(item){
 
-    drop.addEventListener("click", function(e){
+    item.addEventListener("click", function(e){
 
-        e.preventDefault();
+        if(window.innerWidth <= 768){
 
-        let submenu = this.nextElementSibling;
+            e.preventDefault();
 
-        // बाकी dropdown बंद करा
-        document.querySelectorAll(".submenu").forEach(function(menu){
-            if(menu !== submenu){
-                menu.classList.remove("show");
-            }
-        });
+            const submenu = this.nextElementSibling;
 
-        // current dropdown open/close
-        submenu.classList.toggle("show");
+            document.querySelectorAll(".submenu").forEach(function(menu){
+
+                if(menu !== submenu){
+                    menu.classList.remove("show");
+                }
+
+            });
+
+            submenu.classList.toggle("show");
+
+        }
 
     });
 
-});
+});   // <-- हे बंद करणारे }); असणे आवश्यक आहे
 
 
 // बाहेर click केल्यावर dropdown बंद
@@ -152,21 +156,3 @@ document.addEventListener("click", function(e){
     }
 
 });
-
-const slides = document.querySelectorAll(".hero-slider .slide");
-
-if (slides.length > 0) {
-
-    let current = 0;
-
-    setInterval(() => {
-
-        slides[current].classList.remove("active");
-
-        current = (current + 1) % slides.length;
-
-        slides[current].classList.add("active");
-
-    }, 3000);
-
-}
