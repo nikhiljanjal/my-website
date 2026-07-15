@@ -4,341 +4,203 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>श्री मनोहरराव नाईक कनिष्ठ महाविद्यालय</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>Golden Moments</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+.slider{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity 1s ease;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.title{
+    position:absolute;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:40px;
+    font-weight:bold;
+    text-shadow:0 0 20px black;
+    z-index:100;
+}
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:45px;
+    color:white;
+    cursor:pointer;
+    background:rgba(0,0,0,.4);
+    padding:15px 20px;
+    border-radius:50%;
+    user-select:none;
+    z-index:100;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+.dots{
+    position:absolute;
+    bottom:25px;
+    width:100%;
+    text-align:center;
+    z-index:100;
+}
+
+.dot{
+    display:inline-block;
+    width:14px;
+    height:14px;
+    margin:6px;
+    background:white;
+    border-radius:50%;
+    cursor:pointer;
+    opacity:.5;
+}
+
+.dot.active{
+    opacity:1;
+    background:#ff9800;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- Top Bar -->
-<div class="topbar">
+<div class="slider">
 
-<div class="language">
-🌐
-<a href="#">मराठी</a> |
-<a href="#">English</a>
+<h1 class="title">Golden Moments</h1>
+
+<div class="slide active">
+<img src="assets/photo8.jpg">
+</div>
+
+<div class="slide">
+<img src="assets/photo9.jpg">
+</div>
+
+<div class="slide">
+<img src="assets/photo10.jpg">
+</div>
+
+<div class="prev">&#10094;</div>
+<div class="next">&#10095;</div>
+
+<div class="dots">
+<span class="dot active"></span>
+<span class="dot"></span>
+<span class="dot"></span>
 </div>
 
 </div>
- 
-<!-- Header -->
-<header>
-
-<div class="logo">
-<img src="assets/logo.png" alt="College Logo">
-</div>
-
-<div class="title">
-    
-<h1>श्री.मनोहरराव नाईक कनिष्ठ महाविद्यालय</h1>
-
-<p>
-कोंडाळा (महाली),ता.जि.वाशिम
-</p>
-</div>
-<button class="menu-toggle" onclick="toggleMenu()">
-☰
-</button>
-</header>
-
- <!-- ================= NAVBAR START ================= -->
-
-<nav class="navbar-custom">
-
-<ul class="menu">
-
-<li>
-<a href="#">मुख्यपृष्ठ</a>
-</li>
-
-<li class="dropdown">
-<a href="#">
-आमच्याविषयी
-<span class="arrow">▼</span>
-</a>
-
-<ul class="submenu">
-<li><a href="#">संस्थेबद्दल</a></li>
-<li><a href="#">महाविद्यालयाविषयी</a></li>
-<li><a href="#">प्राचार्यांचे मनोगत</a></li>
-<li><a href="#">ध्येय व उद्दिष्टे</a></li>
-<li><a href="#">कार्यकारी मंडळ</a></li>
-<li><a href="#">महाविद्यालयाचे धोरण</a></li>
-</ul>
-
-</li>
-
-<li class="dropdown">
-
-<a href="#">
-विभाग
-<span class="arrow">▼</span>
-</a>
-
-<ul class="submenu">
-<li><a href="#">Humanities</a></li>
-<li><a href="#">Commerce Faculty</a></li>
-<li><a href="#">Science Faculty</a></li>
-<li><a href="#">Sports Department</a></li>
-</ul>
-
-</li>
 
-<li class="dropdown">
+<script>
 
-<a href="#">
-प्रवेश
-<span class="arrow">▼</span>
-</a>
+let slides=document.querySelectorAll(".slide");
+let dots=document.querySelectorAll(".dot");
+let current=0;
 
-<ul class="submenu">
-<li><a href="#">Admission Form</a></li>
-<li><a href="#">Admission Dates</a></li>
-<li><a href="#">Admission Brochure</a></li>
-<li><a href="#">Admission Notice</a></li>
-<li><a href="#">Prospectus</a></li>
-<li><a href="#">Admission Information</a></li>
+function showSlide(index){
 
-<li>
-<a href="https://mahadbt.maharashtra.gov.in/" target="_blank">
-MahaDBT Scholarship
-</a>
-</li>
+slides.forEach(slide=>slide.classList.remove("active"));
+dots.forEach(dot=>dot.classList.remove("active"));
 
-</ul>
+slides[index].classList.add("active");
+dots[index].classList.add("active");
 
-</li>
+current=index;
 
-<li class="dropdown">
+}
 
-<a href="#">
-पुस्तकालय
-<span class="arrow">▼</span>
-</a>
+document.querySelector(".next").onclick=function(){
 
-<ul class="submenu">
-<li><a href="#">Central Library</a></li>
-<li><a href="#">E-Books</a></li>
-<li><a href="#">Question Papers</a></li>
-<li><a href="#">Useful Links</a></li>
-</ul>
+current++;
 
-</li>
+if(current>=slides.length){
+current=0;
+}
 
-<li class="dropdown">
+showSlide(current);
 
-<a href="#">
-परिसर
-<span class="arrow">▼</span>
-</a>
+}
 
-<ul class="submenu">
-<li><a href="#">Campus Activities</a></li>
-<li><a href="#">Campus Facilities</a></li>
-<li>
-<a href="https://maps.app.goo.gl/h7c754m9y1ihVxTn9" target="_blank">
-📍 Google Location
-</a>
-</li>
-</ul>
+document.querySelector(".prev").onclick=function(){
 
-</li>
+current--;
 
-<li class="dropdown dropdown-right">
+if(current<0){
+current=slides.length-1;
+}
 
-<a href="#">
-फोटो
-<span class="arrow">▼</span>
-</a>
+showSlide(current);
 
-<ul class="submenu">
-<li><a href="#">Sports</a></li>
-<li><a href="#">College Programmes</a></li>
-<li><a href="#">Conference & Workshop</a></li>
-<li><a href="golden.html">Golden Moments</a></li>
-<li><a href="#">Infrastructure</a></li>
-</ul>
+}
 
-</li>
+dots.forEach((dot,index)=>{
 
-<li>
-<a href="#">संपर्क</a>
-</li>
+dot.onclick=function(){
 
-</ul>
+showSlide(index);
 
-</nav>
+}
 
-<!-- ================= NAVBAR END ================= -->
-<!-- Hero Section -->
+});
 
-<section class="hero-slider">
+setInterval(function(){
 
-    <img class="slide active" src="assets/photo8.jpg" alt="Golden Moment 1">
-    <img class="slide" src="assets/photo9.jpg" alt="Golden Moment 2">
-    <img class="slide" src="assets/photo10.jpg" alt="Golden Moment 3">
+current++;
 
-</section>
-    <div id="popup" class="popup">
+if(current>=slides.length){
+current=0;
+}
 
-    <div class="popup-content">
+showSlide(current);
 
-        <span class="close" onclick="closePopup()">&times;</span>
+},4000);
 
-        <h2>🎓 Admission Enquiry</h2>
+</script>
 
-        <form id="enquiryForm">
-<input type="text" id="fullname" placeholder="Full Name" required>
-
-<input type="tel" id="mobile" placeholder="Mobile Number" maxlength="10" required>
-
-<input type="text" id="district" placeholder="District" required>
-
-<select id="class" required>
-    <option value="">Select Class</option>
-    <option>11th</option>
-    <option>12th</option>
-    <option>UG</option>
-    <option>PG</option>
-</select>
-
-<select id="stream" required>
-    <option value="">Select Stream</option>
-    <option>Arts</option>
-    <option>Commerce</option>
-    <option>Science</option>
-    <option>Open University</option>
-</select>
-
-<button type="button" onclick="sendWhatsApp()">
-    Submit Enquiry
-</button>
-        </form>
-
-    </div>
-
-</div>
-<!-- Principal Message -->
-
-<section id="about" class="about-principal">
-
-<div class="about-box">
-
-<h2>महाविद्यालयाविषयी</h2>
-
-<p>
-श्री. मनोहरराव नाईक कनिष्ठ महाविद्यालय हे विद्यार्थ्यांच्या सर्वांगीण विकासासाठी कार्यरत असून गुणवत्तापूर्ण शिक्षण, संस्कार आणि आधुनिक ज्ञान देण्यास कटिबद्ध आहे. आमच्या महाविद्यालयात अनुभवी शिक्षक, उत्कृष्ट शैक्षणिक वातावरण आणि विविध उपक्रमांच्या माध्यमातून विद्यार्थ्यांचा सर्वांगीण विकास केला जातो.
-</p>
-
-</div>
-
-<div class="principal-box">
-
-<img src="assets/principal.jpg" alt="Principal">
-
-<h3>प्राचार्यांचे मनोगत</h3>
-
-<p>
-विद्यार्थ्यांच्या उज्ज्वल भविष्यासाठी गुणवत्तापूर्ण शिक्षण देणे हेच आमचे ध्येय आहे. प्रत्येक विद्यार्थ्यामध्ये ज्ञान, संस्कार आणि आत्मविश्वास निर्माण व्हावा यासाठी आम्ही सदैव प्रयत्नशील आहोत.
-</p>
-
-<a href="#about" class="btn">अधिक वाचा</a>
-
-</div>
-
-</section>
- 
-    <section class="notice">
-  <h2>📢 सूचना फलक</h2>
-
-  <ul>
-    <li>✅ प्रवेश प्रक्रिया सुरू आहे.</li>
-    <li>✅ ११ वी प्रवेशासाठी आवश्यक कागदपत्रे कार्यालयात जमा करावीत.</li>
-    <li>✅ नियमित वर्ग सकाळी ७:३० वाजता सुरू होतील.</li>
-  </ul>
-</section>
-
-    <section class="gallery">
-  <h2> फोटो गॅलरी</h2>
-
-  <div class="gallery-grid">
-    <img src="assets/photo1.jpg" alt="College Photo 1">
-    <img src="assets/photo2.jpg" alt="College Photo 2">
-    <img src="assets/photo3.jpg" alt="College Photo 3">
-    <img src="assets/photo4.jpg" alt="College Photo 4">
-    <img src="assets/photo5.jpg" alt="College photo 5">
-    <img src="assets/photo6.jpg" alt="College photo 6">
-    <img src="assets/photo7.jpg" alt="College photo 7">
-    <img src="assets/photo8.jpg" alt="College photo 8">
-    <img src="assets/photo9.jpg" alt="College photo 9">
-    <img src="assets/photo10.jpg" alt="College photo 10">
-  </div>
-        
-</section>  
-
- <section id="golden" class="golden-slider">
-
-    <img class="golden-slide" src="assets/photo8.jpg" alt="Golden Moment 1">
-    <img class="golden-slide" src="assets/photo9.jpg" alt="Golden Moment 2">
-    <img class="golden-slide" src="assets/photo10.jpg" alt="Golden Moment 3">
-
-</section>
-    <section class="stats">
-
-  <div class="stat-box">
-    <h2>10000+</h2>
-    <p>विद्यार्थी</p>
-  </div>
-
-  <div class="stat-box">
-    <h2>35+</h2>
-    <p>शिक्षक</p>
-  </div>
-
-  <div class="stat-box">
-    <h2>95%</h2>
-    <p>निकाल</p>
-  </div>
-
-  <div class="stat-box">
-    <h2>23+</h2>
-    <p>वर्षांचा अनुभव</p>
-  </div>
-
-</section>
-  <section class="contact">
-    <h2>📞 संपर्क</h2>
-
-    <p><strong>श्री मनोहरराव नाईक कनिष्ठ महाविद्यालय</strong></p>
-    <p>कोंडाळा (महाली), ता.जि. वाशिम</p>
-
-    <p>📞 +91 9552865011</p>
-    <p>✉️ nikhiljanjald@gmail.com</p>
-</section>
-
- <footer>
-
-<p>© 2026 श्री. मनोहरराव नाईक कनिष्ठ महाविद्यालय, कोंडाळा (महाली).</p>
-
-<p>All Rights Reserved.</p>
-
-<a href="https://maps.app.goo.gl/h7c754m9y1ihVxTn9" 
-target="_blank" 
-class="location-btn">
-
-📍 Find Us On Google Maps
-
-</a>
-
-</footer> <button id="topBtn" title="Go to Top">
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
- <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
