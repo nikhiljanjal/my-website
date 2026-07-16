@@ -1,4 +1,3 @@
-alert("Script Loaded");
 
 /*==============================
         POPUP
