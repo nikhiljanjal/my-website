@@ -1015,3 +1015,85 @@ footer{
 }
 
 }
+.principal-section{
+    display:flex;
+    gap:25px;
+    padding:60px 8%;
+    align-items:flex-start;
+}
+
+/* Notice Board */
+.notice-box{
+    width:225px;      /* साधारण 2.25 inch */
+    min-height:300px; /* साधारण 3 inch */
+    background:#fff;
+    border:3px solid #003366;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.notice-box h3{
+    text-align:center;
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.notice-box li{
+    margin-bottom:10px;
+}
+
+/* Principal Box */
+.principal-box{
+    flex:1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.message{
+    flex:1;
+    padding-right:20px;
+}
+
+.message h2{
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.message p{
+    line-height:1.8;
+    text-align:justify;
+}
+
+.photo img{
+    width:120px;
+    height:150px;
+    object-fit:cover;
+    border:4px solid #ff9800;
+    border-radius:10px;
+}
+
+@media(max-width:768px){
+    .principal-section{
+        flex-direction:column;
+    }
+
+    .notice-box{
+        width:100%;
+        min-height:auto;
+    }
+
+    .principal-box{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .photo img{
+        margin-bottom:20px;
+    }
+}
