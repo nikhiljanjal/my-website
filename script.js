@@ -117,31 +117,60 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
 });
 function sendEnquiry(){
-        
+
+    const name = document.getElementById("fullname").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const district = document.getElementById("district").value.trim();
+    const cls = document.getElementById("class").value;
+    const stream = document.getElementById("stream").value;
+
+    // Validation
+    if (name === "") {
+        alert("कृपया पूर्ण नाव भरा! (Please enter Full Name)");
+        return;
+    }
+
+    if (mobile === "") {
+        alert("कृपया मोबाईल नंबर भरा! (Please enter Mobile Number)");
+        return;
+    }
+
+    if (!/^[6-9]\d{9}$/.test(mobile)) {
+        alert("कृपया वैध 10 अंकी मोबाईल नंबर भरा! (Enter a valid 10-digit mobile number)");
+        return;
+    }
+
+    if (district === "") {
+        alert("कृपया जिल्हा भरा! (Please enter District)");
+        return;
+    }
+
+    if (cls === "") {
+        alert("कृपया वर्ग निवडा! (Please select Class)");
+        return;
+    }
+
+    if (stream === "") {
+        alert("कृपया शाखा निवडा! (Please select Stream)");
+        return;
+    }
+
     let formData = new FormData();
-
-    formData.append("name", document.getElementById("fullname").value);
-    formData.append("mobile", document.getElementById("mobile").value);
-    formData.append("district", document.getElementById("district").value);
-    formData.append("class", document.getElementById("class").value);
-    formData.append("stream", document.getElementById("stream").value);
-
+    formData.append("name", name);
+    formData.append("mobile", mobile);
+    formData.append("district", district);
+    formData.append("class", cls);
+    formData.append("stream", stream);
 
     fetch("https://script.google.com/macros/s/AKfycbzOLzOWZiafvdIPSgD6dQM3pFLUbU7fYwySSMpgFYUtzJrUuc8dtTLk9Egu9U1zscxqzw/exec", {
         method: "POST",
         body: formData
     })
     .then(() => {
-
         alert("Enquiry Submitted Successfully!");
-
         document.getElementById("enquiryForm").reset();
-
     })
     .catch(() => {
-
         alert("Something went wrong!");
-
     });
-
 }
